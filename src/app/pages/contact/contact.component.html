@@ -1,0 +1,17 @@
+<div>Contact Page</div>
+
+<h3>{{formData.name}}</h3>
+<h3>{{formData.email}}</h3>
+<form >
+  <label for="name">Name:</label>
+  <br>
+  <input type="text" id=name name="name"[(ngModel)]="formData.name">
+  <br>
+  <br>
+  <label for="email">Email</label>
+  <br>
+  <input type="text" name="email" id="email" [(ngModel)]="formData.email">
+  <br>
+  <br>
+  <button (click)="submitForm()">Submit</button>
+</form>
