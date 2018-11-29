@@ -2,16 +2,28 @@
 
 <h3>{{formData.name}}</h3>
 <h3>{{formData.email}}</h3>
-<form >
-  <label for="name">Name:</label>
+<form>
+  <div>
+    <label for="name">Name:</label>
+    <br>
+    <!-- [()] is 2 way data mining to bind the events to the value -->
+    <input type="text" id=name name="name" #name="ngModel" [(ngModel)]="formData.name" (input)="validateName()">
+  </div>
+  <div class="error" *ngIf="(name.dirty || name.touched )&& !validName">
+    Name is Required
+  </div>
   <br>
-  <input type="text" id=name name="name"[(ngModel)]="formData.name">
   <br>
+  <div>
+    <label for="email">Email:</label>
+    <br>
+    <input type="text" name="email" #email="ngModel" id="email" [(ngModel)]="formData.email" (input)="validateEmail()">
+    <br>
+  </div>
+  <div class="error" *ngIf="(email.dirty || email.touched) && !validEmail">
+    Email is Required
+  </div>
+  {{formData | json}}
   <br>
-  <label for="email">Email</label>
-  <br>
-  <input type="text" name="email" id="email" [(ngModel)]="formData.email">
-  <br>
-  <br>
-  <button (click)="submitForm()">Submit</button>
+  <button (click)="submitForm()" [disabled]="!validName||!validEmail">Submit</button>
 </form>

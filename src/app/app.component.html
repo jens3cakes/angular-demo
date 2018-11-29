@@ -1,28 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header></app-header>
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<!-- */ngFor is a directive like a array.map() -->
-<div *ngFor="let characters of characters">
-  {{characters.toUpperCase()}}
-</div>
-<div *ngIf="show">
-  I'm hiding
-</div>
-<button (click)="toggle($event, title + '1')" [disabled] = "true">
-  toggle
-</button>
-<!-- put a parenthesis around action verb, like (click) binds event -->
 
-<div [style.color] = "'red'">
-Not red
-</div>
-<!-- [] sets it to a property to modify it to what you want -->
-
-
-
-<app-test></app-test>
 <router-outlet></router-outlet>

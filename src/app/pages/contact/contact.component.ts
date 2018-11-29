@@ -1,19 +1,50 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   //selector will be determined by the router
-templateUrl:`./contact.component.html`,
-styleUrls: ['./contact.component.scss']
+  templateUrl: `./contact.component.html`,
+  styleUrls: ['./contact.component.scss']
 })
 
-export class ContactComponent{
-  
-  formData: { name:string, email:string} = {
-    name:'initial name',
-    email:'initial email'
+export class ContactComponent {
+
+  formData: { name: string, email: string } = {
+    name: '',
+    email: '',
+    
   }
 
-  submitForm(){
+  validName: boolean = false;
+  validEmail: boolean = false;
+
+  submitForm() {
     console.log('form data: ', this.formData)
   }
+
+  validateName() {
+    const { name } = this.formData;
+    if (name) { this.validName = true; }
+    else { this.validName = false; }
+  }
+
+  validateEmail() {
+    const { email } = this.formData;
+    if (email) { this.validEmail = true }
+    else { this.validEmail = false }
+  }
 }
+
+
+
+
+
+
+
+    // formData: {
+    //   name:string,
+    //   email:string
+    // }={
+    //   name:'',
+    //   email:''
+    // }
