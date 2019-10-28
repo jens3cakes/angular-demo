@@ -11,10 +11,12 @@ import { BackendService } from '../../services/backend.service';
 
 export class HomeComponent implements OnInit {
   content: string = '';
+  
   ngOnInit() {
     console.log('OnInit has fired');
     this.content = 'Home Page'
   };
+  
   title: string = 'angular-demo';
 
   characters: string[] = []
@@ -34,7 +36,7 @@ export class HomeComponent implements OnInit {
       })
 
   }
-  //method go below constructor
+  //methods go below constructor
   toggle(e, title) {
     console.log(e, title)
     console.log(this.title)

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   //selector will be determined by the router

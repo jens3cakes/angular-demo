@@ -9,3 +9,17 @@
     <h2><a routerLink="/contact">Contact</a></h2>
   </li>
 </ul>
+
+
+
+<div class="right">
+  <div *ngIf="user.isLoggedIn">
+    Hello, {{user.username}},
+    <button (click)="logout()">Logout</button>
+  </div>
+  <div *ngIf="!isLoggedIn()">
+    <button (click)="login()">
+      Login
+    </button>
+  </div>
+</div>

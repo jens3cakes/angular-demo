@@ -7,7 +7,7 @@
     <label for="name">Name:</label>
     <br>
     <!-- [()] is 2 way data mining to bind the events to the value -->
-    <input type="text" id=name name="name" #name="ngModel" [(ngModel)]="formData.name" (input)="validateName()">
+    <input type="text" id='name' name="name" #name="ngModel" [(ngModel)]="formData.name" (input)="validateName()">
   </div>
   <div class="error" *ngIf="(name.dirty || name.touched )&& !validName">
     Name is Required
